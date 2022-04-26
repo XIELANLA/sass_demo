@@ -1,0 +1,36 @@
+$a:10;
+.a{
+    @if($a>=20){
+        background-color: black;
+    }@else if($a>=10){
+        background-color: white;
+    }@else{
+        background-color: purple;
+    }
+}
+
+@for $i from 1 to 5{
+    li:nth-of-type(#{$i}){
+        width: $i*100px;
+    }
+}
+
+@for $i from 1 through 5{
+    li:nth-of-type(#{$i}){
+        width: $i*100px;
+    }
+}
+
+$c:red,
+green,
+black,
+white,
+pink;
+
+@each $var in $c{
+    $i:index($c,$var);
+    li:nth-of-type(#{$i}){
+        width: $i*100px;
+        background-color: $var;
+    }
+}

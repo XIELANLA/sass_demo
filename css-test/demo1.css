@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/*变量*/
+h1 {
+  color: red;
+}
+
+/*选择器使用变量*/
+li:nth-of-type(1) {
+  background-color: #fff;
+}
+
+/*嵌套*/
+#a {
+  width: 500px;
+  height: 500px;
+  background-color: purple;
+}
+#a .b {
+  height: 250px;
+  width: 250px;
+  background-color: aqua;
+}
+
+div {
+  width: 200px;
+  height: 200px;
+}
+div > span {
+  width: 100px;
+  height: 100px;
+}
+
+/*嵌套中的&*/
+div {
+  width: 500px;
+  height: 500px;
+}
+div:hover {
+  width: 250px;
+}
+
+/*群组嵌套*/
+div {
+  width: 500px;
+}
+div .leftbox, div .centerbox, div .rightbox {
+  color: pink;
+}
+
+h1, h2, h3 {
+  color: white;
+}
+h1 .box, h2 .box, h3 .box {
+  width: 100px;
+}
+
+/*嵌套属性*/
+div {
+  border-style: solid;
+  border-width: 10px;
+  border-color: pink;
+}
+
+div {
+  border: 1px solid #333;
+  border-bottom: none;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+  border-left: 10px solid green;
+  border-left-style: dashed;
+  border-left-width: 5px;
+  border-left-color: yellow;
+}
+
+/*混入*/
+div {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/*混合器传参*/
+div {
+  -webkit-transition: all, 1s, 0s, linear;
+  -moz-transition: all, 1s, 0s, linear;
+  -ms-transition: all, 1s, 0s, linear;
+  -o-transition: all, 1s, 0s, linear;
+  transition: all, 1s, 0s, linear;
+}
+
+/*混合器传参+参数默认值*/
+div {
+  -webkit-transition: all, 1s, 0s, linear;
+  -moz-transition: all, 1s, 0s, linear;
+  -ms-transition: all, 1s, 0s, linear;
+  -o-transition: all, 1s, 0s, linear;
+  transition: all, 1s, 0s, linear;
+}
+
+/*继承*/
+.d, p {
+  width: 500px;
+  height: 500px;
+  background-color: blue;
+}
+
+p {
+  font-size: large;
+}
+
+/*导入文件*/
+div {
+  width: 500px;
+  height: 500px;
+  background-color: pink;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+span {
+  -webkit-transition: all, 1s, 0s, linear;
+  -moz-transition: all, 1s, 0s, linear;
+  -ms-transition: all, 1s, 0s, linear;
+  -o-transition: all, 1s, 0s, linear;
+  transition: all, 1s, 0s, linear;
+}
+
+/*# sourceMappingURL=demo1.css.map */

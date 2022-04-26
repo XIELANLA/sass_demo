@@ -1,0 +1,153 @@
+
+
+/*变量*/
+$c:red;
+h1{
+    color: $c;
+}
+
+/*选择器使用变量*/
+$i:1;
+li:nth-of-type(#{$i}){
+    background-color: #fff;
+}
+
+
+/*嵌套*/
+#a{
+    width: 500px;
+    height: 500px;
+    background-color: purple;
+    .b{
+        height: 250px;
+        width: 250px;
+        background-color: aqua;
+    }
+}
+
+
+div{
+    width: 200px;
+    height: 200px;
+    >span{
+        width: 100px;
+        height: 100px;
+    }
+}
+/*嵌套中的&*/
+div{
+    width: 500px;
+    height: 500px;
+    &:hover{
+        width: 250px;
+    }
+}
+
+/*群组嵌套*/
+div{
+    width: 500px;
+    .leftbox,.centerbox,.rightbox{
+        color: pink;
+    }
+}
+
+h1,h2,h3{
+    color: white;
+    .box{
+        width: 100px;
+    }
+}
+
+/*嵌套属性*/
+div{
+    border: {
+       style:solid;
+        width: 10px;
+        color:pink;
+    }
+}
+
+div{
+    border:1px solid #333{
+        bottom: none;
+    }
+}
+
+div{
+    width: 100px;
+    height: 100px;
+    border:1px solid red{
+        left: 10px solid green{
+            style:dashed;
+            width: 5px;
+            color: yellow;
+        }
+    }
+}
+/*混入*/
+@mixin radius {
+    border-radius: 5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-radius:5px;
+}
+
+div{
+    @include radius;
+}
+
+/*混合器传参*/
+@mixin my_transition($pro,$dur,$delay,$tim) {
+    -webkit-transition: $pro,$dur,$delay,$tim;
+    -moz-transition: $pro,$dur,$delay,$tim;
+    -ms-transition:$pro,$dur,$delay,$tim;
+    -o-transition: $pro,$dur,$delay,$tim;
+    transition: $pro,$dur,$delay,$tim;
+    
+}
+div{
+    @include my_transition(all,1s ,0s ,linear );
+}
+
+/*混合器传参+参数默认值*/
+@mixin my_transition($pro:all,$dur:1s,$delay:0s,$tim:linear) {
+    -webkit-transition: $pro,$dur,$delay,$tim;
+    -moz-transition: $pro,$dur,$delay,$tim;
+    -ms-transition:$pro,$dur,$delay,$tim;
+    -o-transition: $pro,$dur,$delay,$tim;
+    transition: $pro,$dur,$delay,$tim;
+    
+}
+div{
+    @include my_transition;
+}
+
+/*继承*/
+.d{
+    width: 500px;
+    height: 500px;
+    background-color: blue;
+}
+
+p{
+    @extend .d;
+    font-size: large;
+}
+
+
+/*导入文件*/
+@import './variable.scss';
+@import './mixin.scss';
+
+div{
+    width: $w;
+    height: $h;
+    background-color: $c;
+    @include radius;
+}
+
+span{
+    @include my_transition;
+}
+
